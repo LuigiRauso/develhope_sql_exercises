@@ -1,3 +1,4 @@
+-- EX1: CREATE TABLE
 CREATE TABLE Books (
     book_id INT PRIMARY KEY,
     title VARCHAR(255),
@@ -9,3 +10,11 @@ CREATE TABLE Books (
     rating DECIMAL(2, 1),
     stock_count INT
 );
+
+-- EX2: ALTER TABLE
+ALTER TABLE
+    Books
+ADD
+    publisher VARCHAR(255),
+ADD
+    number_of_pages INT;
