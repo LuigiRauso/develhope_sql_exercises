@@ -41,3 +41,5 @@ SET
 WHERE
     title = 'War and Peace';
 
+-- EX5: GRANT
+GRANT SELECT, UPDATE ON Books TO 'Martin'@'localhost'
