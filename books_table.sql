@@ -42,12 +42,18 @@ WHERE
     title = 'War and Peace';
 
 -- EX5: GRANT
-GRANT SELECT, UPDATE ON Books TO 'Martin'@'localhost'
+GRANT SELECT, UPDATE ON Books TO 'Martin'@'localhost';
 
 -- EX6: REVOKE
-REVOKE UPDATE ON Books FROM 'Martin'@'localhost'
+REVOKE UPDATE ON Books FROM 'Martin'@'localhost';
 
 -- EX7: COMMIT
-BEGIN TRANSACTION
-DELETE FROM Books WHERE book_id = 101
-COMMIT
+BEGIN TRANSACTION;
+DELETE FROM Books WHERE book_id = 101;
+SAVEPOINT SP1;
+COMMIT;
+
+-- EX8: ROLLBACK
+BEGIN TRANSACTION;
+DELETE FROM Books WHERE book_id = 103;
+ROLLBACK TO SP1;
