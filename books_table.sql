@@ -11,35 +11,24 @@ CREATE TABLE Books (
     stock_count INT
 );
 
--- EX2: ALTER TABLE
-ALTER TABLE
-    Books
-ADD
-    publisher VARCHAR(255),
-ADD
-    number_of_pages INT;
+-- EX2: ALTER TABLE (FIXED)
+ALTER TABLE Books
+ADD publisher VARCHAR(255),
+ADD number_of_pages INT;
 
--- EX3: INSERT INTO
+-- EX3: INSERT INTO (FIXED)
 INSERT INTO Books (book_id, title, author, genre, published_year, isbn, price, rating, stock_count, publisher, number_of_pages)
-VALUES (1, 'A Journey to the Center', 'Jules Verne', 'Adventure', 1864, '1234567890123', 12.99, 4.5, 10, 'Verne Publishing', 350);
+VALUES
+(1, 'A Journey to the Center', 'Jules Verne', 'Adventure', 1864, '1234567890123', 12.99, 4.5, 10, 'Verne Publishing', 350),
+(2, 'War and Peace', 'Leo Tolstoy', 'Historical', 1869, '1234567890124', 14.99, 4.8, 5, 'Tolstoy Prints', 1200),
+(3, 'Whispers of the Wind', 'Amelia Blackburn', 'Romance', 1982, '1234567890125', 9.99, 4.2, 20, 'Blackburn House', 275),
+(4, 'The Galactic Odyssey', 'Orion Starfield', 'Science Fiction', 2005, '1234567890126', 19.99, 4.9, 15, 'Nebula Press', 450);
 
-INSERT INTO Books (book_id, title, author, genre, published_year, isbn, price, rating, stock_count, publisher, number_of_pages)
-VALUES (2, 'War and Peace', 'Leo Tolstoy', 'Historical', 1869, '1234567890124', 14.99, 4.8, 5, 'Tolstoy Prints', 1200);
 
-INSERT INTO Books (book_id, title, author, genre, published_year, isbn, price, rating, stock_count, publisher, number_of_pages)
-VALUES (3, 'Whispers of the Wind', 'Amelia Blackburn', 'Romance', 1982, '1234567890125', 9.99, 4.2, 20, 'Blackburn House', 275);
-
-INSERT INTO Books (book_id, title, author, genre, published_year, isbn, price, rating, stock_count, publisher, number_of_pages)
-VALUES (4, 'The Galactic Odyssey', 'Orion Starfield', 'Science Fiction', 2005, '1234567890126', 19.99, 4.9, 15, 'Nebula Press', 450);
-
--- EX4: UPDATE
-UPDATE
-    Books
-SET
-    price = 13.99,
-    stock_count = stock_count - 1
-WHERE
-    title = 'War and Peace';
+-- EX4: UPDATE (FIXED)
+UPDATE Books
+SET price = 13.99, stock_count = stock_count - 1
+WHERE title = 'War and Peace';
 
 -- EX5: GRANT
 GRANT SELECT, UPDATE ON Books TO 'Martin'@'localhost';
