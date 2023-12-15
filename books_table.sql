@@ -46,3 +46,8 @@ GRANT SELECT, UPDATE ON Books TO 'Martin'@'localhost'
 
 -- EX6: REVOKE
 REVOKE UPDATE ON Books FROM 'Martin'@'localhost'
+
+-- EX7: COMMIT
+BEGIN TRANSACTION
+DELETE FROM Books WHERE book_id = 101
+COMMIT
