@@ -43,3 +43,6 @@ WHERE
 
 -- EX5: GRANT
 GRANT SELECT, UPDATE ON Books TO 'Martin'@'localhost'
+
+-- EX6: REVOKE
+REVOKE UPDATE ON Books FROM 'Martin'@'localhost'
